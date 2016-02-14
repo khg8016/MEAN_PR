@@ -1,0 +1,16 @@
+//   Created by Aplus on 2016-02-14.
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+    hr
+    p user: #{name}
+    hr
+    form(action ='/insert' method='post')
+        p ID
+        input(type='text' name='id')
+        p PASSWORD
+        input(type='text' name='password')
+        br
+        input(type='submit' value='Submit')
