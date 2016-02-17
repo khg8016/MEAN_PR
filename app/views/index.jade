@@ -5,12 +5,9 @@ block content
     h1= title
     p Welcome to #{title}
     hr
-    p user: #{name}
-    hr
-    form(action ='/insert' method='post')
-        p ID
-        input(type='text' name='id')
-        p PASSWORD
-        input(type='text' name='password')
-        br
-        input(type='submit' value='Submit')
+    - if (id)
+        h2 hello  #{id}
+        a(href = '/signout') SignOut
+    - else
+        a(href = '/signin') SingIn
+        a(href = '/signup') SignUp

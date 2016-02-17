@@ -6,5 +6,6 @@
 
 // Set the 'development' environment configuration object
 module.exports = {
+    db : 'mongodb://localhost/meanpr',
     sessionSecret: 'khg8016'
 };

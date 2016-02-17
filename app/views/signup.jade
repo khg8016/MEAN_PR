@@ -1,0 +1,17 @@
+//  Created by Aplus on 2016-02-17.
+doctype html
+html
+    head
+
+    body
+        - for (i in messages)
+        .flash(class="alert alert-danger")= messages[i]
+
+        .container
+            form(action='/signup' method='post')
+                h2(class="form -signin-geading") 가입이 쉽습니다.
+                label(class="sr-only") Username
+                input(type='text' name='username' class='form-control' placeholder='User name' required='' autofocus='')
+                label(class="sr-only") Password
+                input(type='password' name='password' class='form-control' placeholder='Password' required='')
+                input(class="btn btn-lg btn-primary btn-block" type='submit' value="가입하기")
