@@ -9,7 +9,7 @@ var passport = require('passport'),
 module.exports = function(){
     var User = mongoose.model('User');
 
-    passport.serializeUser(function(user, done){ //ㅣlogin성공할 경우 이 메서드를 통해 사영자 정보를 session에 저장
+    passport.serializeUser(function(user, done){ //authnticate를 통해 use해 놓은 strategy로 login하고(req.login자동실행) 그다음 login성공할 경우 이 메서드를 통해 사용자 정보를 session에 저장
        //done(null, user.id); //session에 id속성 저장
         done(null, user);
     });

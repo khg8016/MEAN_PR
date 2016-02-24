@@ -24,7 +24,7 @@ module.exports = function(){ //login할 때 쓰이는 전략
                 });
             }
 
-            return done(null, user); //login 후에 user의 정보가 http session에 저장된다.
+            return done(null, user); //아마도 req.login 메서드가 자동으로 실행되나 봄. login 후에 user의 정보가 http session에 저장된다.
         });
     }));
 };

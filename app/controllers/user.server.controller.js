@@ -64,7 +64,6 @@ exports.signup = function(req, res, next) { //아이디 만들기 버튼?
     if (!req.user) {//로그인 안됐으면
         // Create a new 'User' model instance
         var user = new User(req.body); //body에 있는 username과 password가 user로 다들어가버림
-        console.log(user.password);
         var message = null;
 
         // Set the user provider property
@@ -85,7 +84,7 @@ exports.signup = function(req, res, next) { //아이디 만들기 버튼?
             }
 
             // If the user was created successfully use the Passport 'login' method to login
-            req.login(user, function(err) { //사용자 세션 생성 user는 req.user에 들어갈 것임 passport.authenticate()메서드 사용할 때 자동으로 호출된다.
+            req.login(user, function(err) { //사용자 세션 생성. user는 req.user에 들어갈 것임. passport.authenticate()메서드 사용할 때 자동으로 호출되기도 함.
                 // If a login error occurs move to the next middleware
                 if (err) return next(err);
 
