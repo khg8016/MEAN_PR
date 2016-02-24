@@ -1,4 +1,4 @@
-<section>
-	<input type=text id=text1 ng-model=name>
-	<input type=text id=text2 ng-model=name>
+<section ng-controller=ExampleController>
+	<!--<input type=text id=text1 ng-model=name>  ng-model은 input에 위치하여 input 값을 모델의 속성에 결합. 여기서 모델의 속성은 scope 객체의 프로퍼티(모델) input에 값을 넣으면 scope객체의 프로퍼티에 값이 들어감 -->
+	<p> {{name}}</p>
 </section>

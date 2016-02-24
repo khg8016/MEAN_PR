@@ -4,17 +4,33 @@ html
     head
         title Kim Hyun Gu
     body
+
         p Welcome to #{title}
         hr
-        - if (id)
-            h2 hello  #{id}
+        - if (user !== 'undefined')
+            h2 hello
             a(href = '/signout') SignOut
         - else
             a(href = '/signin') SingIn
             br
             a(href = '/signup') SignUp
-        section(ng-include ="'example/views/example.client.view.html'")
+
+
+        div(ng-view)
         //ng-include는 경로에서 템플릿을 읽어 뷰로 컴파일한 다음 출력 결과를 지시자 DOM 엘리먼트 내부에 위치시킨다.
+        script.
+            if (!{user} == 'undefined')
+                window.user = 'null';
+            else
+                window.user = !{user};
+
         script(type="text/javascript" src="/lib/angular/angular.js")
+        script(type="text/javascript" src="/lib/angular-route/angular-route.js")
         script(type="text/javascript" src="/example/example.client.module.js")
+        script(type="text/javascript" src="/example/controllers/example.client.controller.js")
+        script(type="text/javascript" src="/example/config/example.client.routes.js")
+        script(type="text/javascript" src="/example/users/users.client.module.js")
+        script(type="text/javascript" src="/example/users/services/authentication.client.service.js")
         script(type="text/javascript" src="/application.js")
+
+

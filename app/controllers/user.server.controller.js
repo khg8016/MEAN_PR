@@ -100,7 +100,7 @@ exports.signup = function(req, res, next) { //아이디 만들기 버튼?
 // Create a new controller method for signing out
 exports.signout = function(req, res) {
     // Use the Passport 'logout' method to logout
-    console.log("sing out ok");
+    console.log("sign out ok");
     req.logout(); //인증된 세션 무효화
 
     // Redirect the user back to the main application page
