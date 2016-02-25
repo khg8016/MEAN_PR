@@ -17,6 +17,7 @@ html
 
 
         div(ng-view)
+            //ng-view는 해당 페이지에서 부른 모듈중 한놈(example 모듈)이 router provicer에 정의해놓은 url에 맞는 템플릿을 띄워줌
         //ng-include는 경로에서 템플릿을 읽어 뷰로 컴파일한 다음 출력 결과를 지시자 DOM 엘리먼트 내부에 위치시킨다.
         script.
             if (!{user} == 'undefined')
