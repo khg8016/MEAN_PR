@@ -63,7 +63,7 @@ exports.signup = function(req, res, next) { //아이디 만들기 버튼?
     // If user is not connected, create and login a new user, otherwise redirect the user back to the main application page
     if (!req.user) {//로그인 안됐으면
         // Create a new 'User' model instance
-        var user = new User(req.body); //body에 있는 username과 password가 user로 다들어가버림
+        var user = new User(req.body); //post 요청은  json 객체로 req.body에 담긴다(body parser)
         var message = null;
 
         // Set the user provider property

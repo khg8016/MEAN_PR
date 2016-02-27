@@ -9,8 +9,7 @@ exports.renderIndex = function(req, res){
         console.log(req.session.lastVisit);
     }
     req.session.lastVisit = new Date();
-    console.log("renderindex");
-    res.render('index', { title: 'Express' , user: JSON.stringify(req.user) || 'undefined'});
+    res.render('index', { user: JSON.stringify(req.user) || 'undefined'});
 };
 
 exports.renderInsert = function(req, res){

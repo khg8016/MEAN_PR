@@ -3,6 +3,6 @@
  */
 angular.module('example').controller('ExampleController', ['$scope', 'Authentication', //view에서 ng-controller= ExampleController 만나면 실행
     function($scope, Authentication){
-      $scope.name= Authentication.user ? Authentication.user.username : 'Please login';
+      $scope.authentication= Authentication;
     }
 ]);

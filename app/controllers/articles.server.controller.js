@@ -2,7 +2,8 @@
  * Created by Aplus on 2016-02-25.
  */
 
-var Article=require('mongoose').model('Article');
+var mongoose = require('mongoose');
+var Article = mongoose.model('Article');
 
 var getErrorMessage = function(err){
     if(err.errors){
@@ -14,10 +15,9 @@ var getErrorMessage = function(err){
     }
 };
 
-exports.create = function(req, res){
+exports.create = function(req, res){ //req.body는 post나 put요청으로 들어온 객체
     var article = new Article(req.body);
     article.creator = req.user;
-
     article.save(function(err){
         if(err){
             return res.status(400).send({
