@@ -13,7 +13,7 @@ html
                 window.user = 'null';
             else
                 window.user = !{user};
-
+        script(type="text/javascript" src="/socket.io/socket.io.js")
         script(type="text/javascript" src="/lib/angular/angular.js")
         script(type="text/javascript" src="/lib/angular-route/angular-route.js")
         script(type="text/javascript" src="/lib/angular-resource/angular-resource.js")
@@ -26,6 +26,10 @@ html
         script(type="text/javascript" src="/example/config/example.client.routes.js")
         script(type="text/javascript" src="/example/users/users.client.module.js")
         script(type="text/javascript" src="/example/users/services/authentication.client.service.js")
+        script(type="text/javascript" src="/chat/chat.client.module.js")
+        script(type="text/javascript" src="/chat/services/socket.client.service.js")
+        script(type="text/javascript" src="/chat/controllers/chat.client.controller.js")
+        script(type="text/javascript" src="/chat/config/chat.client.routes.js")
         script(type="text/javascript" src="/application.js")
 
 
