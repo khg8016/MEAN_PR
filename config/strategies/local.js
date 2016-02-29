@@ -13,18 +13,19 @@ module.exports = function(){ //login할 때 쓰이는 전략
             if(err){
                 return done(err);
             }
-            if(!user){ //잘못된 아이디로 로그인
-                return done(null, false, {
+            if(!user){ //db에 해당 아이디가 조회되지 않는 경우
+                return done(null, false, { //메세지는 flash 객체에 저장됨. 이 메세지는 'error' 객체에 저장되어있고 이 객체를 읽으려면 req.flash('error')를 통해 읽음
                     message : 'Unknown user'
                 });
             }
             if(!user.authenticate(password)){ //비번 틀릴시에
                 return done(null, false, {
-                    message : 'invalid password'
+                    message : 'invalid password' //flash 객체에 저장?
                 });
             }
-
+            console.log("local strategy");
             return done(null, user); //아마도 req.login 메서드가 자동으로 실행되나 봄. login 후에 user의 정보가 http session에 저장된다.
+
         });
     }));
 };

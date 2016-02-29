@@ -1,0 +1,16 @@
+<section data-ng-controller="ArticleController" data-ng-init="findOne()"> <!-- 처음 view가 올라올 때 실행 -->
+    <h1 data-ng-bind="article.title"></h1>
+    <p data-ng-bind="article.content"></p>
+
+    <div data-ng-show="authentication.user._id == article.creator._id"> <!-- scope 의 프로퍼티임 둘다 article은 findone후에 생기는 놈-->
+        <a href="/#!/articles/{{article._id}}/edit">edit</a>
+        <a href="#" data-ng-click="delete();">delete</a>
+        <a href="/#!/">go to main page</a>
+    </div>
+    <small>
+        <em>Posted on</em>
+        <em data-ng-bind="article.created | data:'mediumDate'"></em>
+        <em>by</em>
+        <em data-ng-bind="article.creator.username"></em>
+    </small>
+</section>

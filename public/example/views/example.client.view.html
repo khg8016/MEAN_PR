@@ -1,4 +1,15 @@
 <section ng-controller=ExampleController>
 	<!--<input type=text id=text1 ng-model=name>  ng-model은 input에 위치하여 input 값을 모델의 속성에 결합. 여기서 모델의 속성은 scope 객체의 프로퍼티(모델) input에 값을 넣으면 scope객체의 프로퍼티에 값이 들어감 -->
-	<p> {{name}}</p>
+	<div data-ng-show="!authentication.user">
+		<a href="/signup">Sign up</a>
+		<a href="/signin">Log in</a>
+	</div>
+	<div data-ng-show="authentication.user">
+		<h1>Hello <span data-ng-bind="authentication.user.username"></span></h1>
+		<a href="/signout">Log out</a>
+		<ul>
+			<li><a href="/#!/articles">Go to article List</a></li>
+			<li><a href="/#!/articles/create">Write an article</a></li>
+		</ul>
+	</div>
 </section>
