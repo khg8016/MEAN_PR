@@ -1,7 +1,6 @@
 /**
  * Created by Aplus on 2016-02-27.
  */
-
 angular.module('articles').controller('ArticleController', ['$scope', '$routeParams', '$location', 'Authentication', 'Articles',
     function($scope, $routeParams, $location, Authentication, Articles){
         $scope.authentication = Authentication;
